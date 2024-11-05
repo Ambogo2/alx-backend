@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome to the Mock Login System</h1>
+    <p>
+        {% if g.user %}
+            {% set username = g.user.name %}
+            {% if g.user.locale == 'fr' %}
+                Vous êtes connecté en tant que {{ username }}.
+            {% else %}
+                You are logged in as {{ username }}.
+            {% endif %}
+        {% else %}
+            {% if g.user.locale == 'fr' %}
+                Vous n'êtes pas connecté.
+            {% else %}
+                You are not logged in.
+            {% endif %}
+        {% endif %}
+    </p>
+</body>
+</html>
